@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Nutanix</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/styles.css">
+    <script>
+      var nutanix = {};
+      nutanix.mode = 'E'; // R and E
+      nutanix.specsUrl = '/static/v3/petstore.json';
+      function bootstrapDocs(specs) {
+        const specsOrSpecsUrl = specs || nutanix.specsUrl;
+        const options = {
+          theme: {baseFont: {
+            size: '12px'
+          }},
+          providedByName: 'Intent ApiDocs by Nutanix',
+          providedByUri: 'http://www.nutanix.com',
+          enableConsole: true
+        };
+
+        Redoc.init(specsOrSpecsUrl, options, document.getElementById('redoc-container'), (args) => console.log('Done bootstrappoing docs!'));
+
+        if(nutanix && nutanix.mode === 'R') {
+          document.getElementsByTagName('body')[0].classList.add('mode-R')
+        }
+        if(nutanix && nutanix.mode === 'E') {
+          document.getElementsByTagName('body')[0].classList.add('mode-E')
+        }
+
+      }
+
+      function exploreApis(event) {
+        const username = document.getElementById('_username').value;
+        const password = document.getElementById('_password').value;
+        const authorization = 'Basic ' +  btoa(`${username}:${password}`);
+
+        const headers = new Headers();
+
+        headers.append('Authorization', authorization);
+
+        const request = new Request(nutanix.specsUrl, {
+          method: 'GET', 
+	        mode: 'cors', 
+	        redirect: 'follow',
+	        headers: headers
+        });
+
+        fetch(request).then(function(response) {
+          return response.json();
+        }).then(function(specs){
+          bootstrapDocs(specs);
+        }).catch(function(err) {
+	        console.error(`Errored out while trying to fetch specs from ${nutanix.specsUrl} : err `);
+        });
+
+      }
+
+      function validate(event) {
+        const username = document.getElementById('_username').value;
+        const password = document.getElementById('_password').value;
+        if(username && username.length > 0 && password && password.length > 0){
+          document.getElementById('_exploreBtn').disabled = false;
+        } else {
+          document.getElementById('_exploreBtn').disabled = true;
+        }
+      }
+    </script>
+  </head>
+  <body onload="bootstrapDocs()">
+    <div class="docs">
+      <header class="docs-header">
+        <img src="./css/assets/nutanix.png" class="docs-logo" alt="logo" />
+        <div class="docs-title">DEVELOPER</div>
+        <div class="login-container">
+          <form>
+            <input type="text" id="_username" onchange="validate()" placeholder="USERNAME" />
+            <input type="password" id="_password" onchange="validate()" autocomplete="off" placeholder="PASSWORD" />
+            <button class="btn-explore" id="_exploreBtn" disabled onclick='exploreApis()'>EXPLORE</button>
+          </form>
+        </div>
+      </header>
+    </div>
+    <div id="redoc-container"></div>
+    <script src="http://cdn.jsdelivr.net/gh/harjeethans/NuReDoc@2.0.0-alpha.29/bundles/redoc.standalone.js"> </script>
+  </body>
+</html>

@@ -1,0 +1,117 @@
+@font-face{
+  font-family: 'Ntnx';
+  font-weight: 300;
+  src: url('./assets/fonts/ntnx/Ntnx-Thin.woff') format('woff'),
+  url('./assets/fonts/ntnx/Ntnx-Thin.ttf') format('truetype');
+}
+
+@font-face{
+  font-family: 'Ntnx';
+  font-weight: 400;
+  src: url('./assets/fonts/ntnx/Ntnx-Regular.woff') format('woff'),
+  url('./assets/fonts/ntnx/Ntnx-Regular.ttf') format('truetype');
+}
+
+@font-face{
+  font-family: 'Ntnx';
+  font-weight: 500;
+  src: url('./assets/fonts/ntnx/Ntnx-Medium.woff') format('woff'),
+  url('./assets/fonts/ntnx/Ntnx-Medium.ttf') format('truetype');
+}
+
+@font-face{
+  font-family: 'Ntnx';
+  font-weight: 600;
+  src: url('./assets/fonts/ntnx/Ntnx-Semibold.woff') format('woff'),
+  url('./assets/fonts/ntnx/Ntnx-Semibold.ttf') format('truetype');
+}
+
+@font-face{
+  font-family: 'Ntnx';
+  font-weight: 700;
+  src: url('./assets/fonts/ntnx/Ntnx-Bold.woff') format('woff'),
+  url('./assets/fonts/ntnx/Ntnx-Bold.ttf') format('truetype');
+}
+
+@font-face{
+  font-family:ProximaNovaSoft;
+  font-weight:400;
+  src:url(./assets/fonts/ntnx/ProximaNovaSoft-Regular-webfont.eot);
+  src:url(./assets/fonts/ntnx/ProximaNovaSoft-Regular-webfont.eot?iefix) format('eot'),url(./assets/fonts/ntnx/ProximaNovaSoft-Regular-webfont.woff) format('woff'),url(./assets/fonts/ntnx/ProximaNovaSoft-Regular-webfont.ttf) format('truetype'),url(./assets/fonts/ntnx/ProximaNovaSoft-Regular-webfont.svg#webfont) format('svg')
+}
+@font-face{
+  font-family:ProximaNovaSoft;
+  font-weight:500;
+  src:url(./assets/fonts/ntnx/ProximaNovaSoft-Medium-webfont.eot);
+  src:url(./assets/fonts/ntnx/ProximaNovaSoft-Medium-webfont.eot?iefix) format('eot'),url(./assets/fonts/ntnx/ProximaNovaSoft-Medium-webfont.woff) format('woff'),url(./assets/fonts/ntnx/ProximaNovaSoft-Medium-webfont.ttf) format('truetype'),url(./assets/fonts/ntnx/ProximaNovaSoft-Medium-webfont.svg#webfont) format('svg')
+}
+@font-face{
+  font-family:ProximaNovaSoft;
+  font-weight:600;
+  src:url(./assets/fonts/ntnx/ProximaNovaSoft-Semibold-webfont.eot);
+  src:url(./assets/fonts/ntnx/ProximaNovaSoft-Semibold-webfont.eot?iefix) format('eot'),url(./assets/fonts/ntnx/ProximaNovaSoft-Semibold-webfont.woff) format('woff'),url(./assets/fonts/ntnx/ProximaNovaSoft-Semibold-webfont.ttf) format('truetype'),url(./assets/fonts/ntnx/ProximaNovaSoft-Semibold-webfont.svg#webfont) format('svg')
+}
+@font-face{
+  font-family:ProximaNovaSoft;
+  font-weight:700;
+  src:url(./assets/fonts/ntnx/ProximaNovaSoft-Bold-webfont.eot);
+  src:url(./assets/fonts/ntnx/ProximaNovaSoft-Bold-webfont.eot?iefix) format('eot'),url(./assets/fonts/ntnx/ProximaNovaSoft-Bold-webfont.woff) format('woff'),url(./assets/fonts/ntnx/ProximaNovaSoft-Bold-webfont.ttf) format('truetype'),url(./assets/fonts/ntnx/ProximaNovaSoft-Bold-webfont.svg#webfont) format('svg')
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Montserrat, sans-serif;
+  font-size: 12px;
+}
+
+.docs-logo {
+  height: 30px;
+  padding: 15px;
+  display: inline-block;
+}
+
+.docs-header {
+  height: 60px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+}
+
+.docs-title {
+  padding-top: 25px; 
+}
+
+body.mode-R .login-container {
+  display: none;
+}
+.login-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
+
+#_username, #_password {
+  padding: 0.5em;
+  margin: 0em 0.5em;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(38, 50, 56, 0.5);
+  border-image: initial;
+  border-radius: 3px;
+}
+
+.btn-explore {
+  font-size: 0.929em;
+  margin-left: 1em;
+  color: black;
+  float: right;
+  border-radius: 0px;
+  border-width: initial;
+  border-style: none;
+  border-color: initial;
+  border-image: initial;
+  padding: 5px 10px;
+  background: rgb(226, 226, 226);
+}

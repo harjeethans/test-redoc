@@ -1,0 +1,29 @@
+{
+  "name": "nu-redoc",
+  "version": "1.0.0",
+  "description": "Warpper for ReDocs",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "start": "npx http-server",
+    "start-prod": "npx http-server ./dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://drt-it-github-prod-1.eng.nutanix.com/harjeet-singh/nu-redoc.git"
+  },
+  "keywords": [
+    "openapi3",
+    "swagger",
+    "docs",
+    "Redocs"
+  ],
+  "author": "Harjeet Singh",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "http-server": "^0.11.1"
+  }
+}
